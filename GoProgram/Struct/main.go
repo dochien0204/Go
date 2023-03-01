@@ -52,6 +52,24 @@ func main() {
 	fmt.Println(chien)
 
 	fmt.Println("\n Person with contact info")
-	fmt.Printf("%+v", personWithContact)
+	fmt.Printf("%+v\n", personWithContact)
 
+	//print using receiver function
+
+	personWithContact.Print()
+
+	//update new Name for Person
+	fmt.Println("Update New Name For Person")
+	personWithContact.UpdateNewName("NewName")
+	personWithContact.Print()
+
+}
+
+// receivers function with struct
+func (p personWithContactInfo) Print() {
+	fmt.Println(p)
+}
+
+func (p *personWithContactInfo) UpdateNewName(newName string) {
+	(*p).lastName = newName
 }
