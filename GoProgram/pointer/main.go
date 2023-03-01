@@ -19,4 +19,7 @@ func main() {
 
 	*b = 43
 	println(a) //result: 43
+
+	//address of b
+	fmt.Println(&b)
 }
